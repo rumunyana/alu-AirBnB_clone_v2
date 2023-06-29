@@ -23,7 +23,7 @@ def states_list():
         sort State object alphabetically by name
     """
     sorted_states = sorted(states.values(), key=lambda state: state.name)
-    return render_template(path, sorted_states=sorted_states)
+    return render_template(path, states=sorted_states)
 
 
 @app.teardown_appcontext
@@ -38,4 +38,3 @@ if __name__ == '__main__':
     host = getenv("HBNB_API_HOST", "0.0.0.0")
     port = getenv("HBNB_API_PORT", "5000")
     app.run(host=host, port=port, threaded=True)
-    
